@@ -3,12 +3,12 @@ extends layout
 block content
   h1 #{sitename}
 
-  form.form-horizontal
+  form.form-horizontal(method='post')
     .col-md-11
-      input.form-control.input-md(id='textinput' name='textinput' type='text' placeholder='')
+      input.form-control.input-md(name='textinput' type='text')
     .col-md-1
-      button.btn.btn-primary(id='singlebutton' name='send') Add Record
+      button.btn.btn-primary(type='submit') Add Record
   .col-md-12
     ul
       each value in records
-        li= value
+        li= value.item
