@@ -2,3 +2,13 @@ extends layout
 
 block content
   h1 #{sitename}
+
+  form.form-horizontal
+    .col-md-11
+      input.form-control.input-md(id='textinput' name='textinput' type='text' placeholder='')
+    .col-md-1
+      button.btn.btn-primary(id='singlebutton' name='send') Add Record
+  .col-md-12
+    ul
+      each value in records
+        li= value

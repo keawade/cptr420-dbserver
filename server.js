@@ -19,8 +19,12 @@ app.use(express.static('public'))
 app.locals.sitename = 'CPTR420'
 app.locals.source_url = 'https://github.com/UnionTTC/cptr420-dbserver'
 
+var Data = require('./models/data.js')
 app.get('/', function (req, res) {
-  res.render('index')
+  res.render('index', {
+    title: 'index',
+    records: Data.find().select('item')
+  })
 })
 
 var server = app.listen(app.get('port'), app.get('ip'), function () {
