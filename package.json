@@ -1,0 +1,25 @@
+{
+  "name": "cptr420-dbserver",
+  "version": "1.0.0",
+  "description": "A boring web app that provides basic database access for a class.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.12",
+    "pug": "^2.0.0-alpha3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keawade/cptr420-dbserver.git"
+  },
+  "author": "keawade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keawade/cptr420-dbserver/issues"
+  },
+  "homepage": "https://github.com/keawade/cptr420-dbserver#readme"
+}
