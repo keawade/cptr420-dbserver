@@ -5,16 +5,12 @@ var app = express()
 
 var mongoose = require('mongoose')
 
-var mongouser = ''
-var mongopass = ''
-var mongopath = ''
-
-mongoose.connect('mongodb://' + mongouser + ':' + mongopass + '@' + mongopath)
+mongoose.connect('mongodb://' + process.env.mongouser + ':' + process.env.mongopass + '@' + process.env.mongopath)
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function (callback) {
-  console.log('[mongoose] connected to mongodb://' + mongouser + ':' + mongopass + '@' + mongopath)
+  console.log('[mongoose] connected to mongodb://' + process.env.mongouser + ':' + process.env.mongopass + '@' + process.env.mongopath)
 })
 
 app.set('view engine', 'pug')
