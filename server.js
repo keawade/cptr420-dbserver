@@ -4,12 +4,17 @@ var bodyParser = require('body-parser')
 var app = express()
 
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/cptr420')
+
+var mongouser = ''
+var mongopass = ''
+var mongopath = ''
+
+mongoose.connect('mongodb://' + mongouser + ':' + mongopass + '@' + mongopath)
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function (callback) {
-  console.log('[mongoose] connected to mongodb://localhost/cptr420')
+  console.log('[mongoose] connected to mongodb://' + mongouser + ':' + mongopass + '@' + mongopath)
 })
 
 app.set('view engine', 'pug')
