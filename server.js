@@ -14,9 +14,6 @@ db.once('open', function (callback) {
 })
 
 app.set('view engine', 'pug')
-app.set('port', process.env.PORT || 3000)
-app.set('ip', process.env.IP || 'localhost')
-
 app.use(bodyParser.urlencoded({
   extended: false
 }))
@@ -53,7 +50,6 @@ app.post('/', function (req, res) {
   })
 })
 
-var server = app.listen(app.get('port'), app.get('ip'), function () {
-  var address = server.address()
-  console.log('[server.js] app running at http://%s:%s', address.address, address.port)
-})
+var port = process.env.PORT
+
+app.listen(port)
