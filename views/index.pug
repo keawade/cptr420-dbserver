@@ -1,14 +1,18 @@
 extends layout
 
 block content
-  h1 #{sitename}
-
-  form.form-horizontal(method='post')
-    .col-md-11
-      input.form-control.input-md(name='textinput' type='text')
-    .col-md-1
-      button.btn.btn-primary(type='submit') Add Record
-  .col-md-12
-    ul
-      each value in records
-        li= value.item
+  .container
+    .jumbotron
+      h1 Advanced System Administration
+      p This is a web server and database demo for CPTR420.
+      p
+        a.btn.btn-primary.btn-lg(href='https://github.com/keawade/cptr420-dbserver' role='button' target='_blank') Fork on Github
+    form.form-horizontal(method='post')
+      .row
+        .col-lg-12
+          .input-group
+            input.form-control(name='textinput' type='text')
+            span.input-group-btn
+              button.btn.btn-success(type='submit') Add Record
+    each value in records
+      .well= value.item
